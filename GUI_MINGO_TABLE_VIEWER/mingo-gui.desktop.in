@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mingo Table Viewer
+Comment=Open Mingo table viewer GUIs over SSH X11 forwarding
+Exec=__LAUNCHER_PATH__ --ask
+Icon=__ICON_NAME__
+Terminal=false
+Categories=Science;Utility;
+StartupNotify=true
