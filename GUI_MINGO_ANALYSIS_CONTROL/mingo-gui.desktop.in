@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Analysis Status
+Comment=Choose and open Mingo timeline GUIs over SSH X11 forwarding
+Exec=__LAUNCHER_PATH__ --ask
+Icon=__ICON_NAME__
+Terminal=false
+Categories=Science;Utility;
+StartupNotify=true
