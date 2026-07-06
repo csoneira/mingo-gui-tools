@@ -38,7 +38,7 @@ Foreground mode (helpful for debugging):
 
 When ready, put your icon file here:
 
-`logo_mingo_calibration_metadata.png`
+`logo_mingo_calibration.png` (preferred) or `logo_mingo_calibration_metadata.png`
 
 Then rerun:
 
