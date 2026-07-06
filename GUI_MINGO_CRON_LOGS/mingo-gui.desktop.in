@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mingo Cron Logs
+Comment=Open MINGO cron log matrix viewer over SSH X11 forwarding
+Exec=__LAUNCHER_PATH__
+Icon=__ICON_NAME__
+Terminal=false
+Categories=Science;Utility;
+StartupNotify=true
