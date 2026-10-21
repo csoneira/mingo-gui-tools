@@ -11,10 +11,10 @@ This repository is primarily a collection of independent tools rather than a sin
 | `GUI_MINGO_ANALYSIS_CONTROL` | Launches the MINGO Step 1 and/or simulation status GUIs. | Launcher only. The Python GUIs are expected on the remote `mingo` host. |
 | `GUI_MINGO_CALIBRATION_METADATA` | Launches the calibration metadata/timeline GUI. | Launcher only. The Python GUI is expected on the remote `mingo` host. |
 | `GUI_MINGO_CRON_LOGS` | Read-only matrix viewer for selected `DATAFLOW_v3` cron logs, including status, tail preview and live follow. | Python/Tkinter GUI plus launcher and desktop integration. |
-| `GUI_MINGO_TABLE_VIEWER` | Desktop/SSH launcher currently targeting the Step 1 status-timeline GUI under the `MASTER/ANCILLARY/PIPELINE_REAL_TIME_CHECK` tree. | Launcher only. |
+| `GUI_MINGO_TABLE_VIEWER` | Legacy/compatibility desktop launcher currently targeting the Step 1 status-timeline GUI under the `MASTER/ANCILLARY/PIPELINE_REAL_TIME_CHECK` tree. | Launcher only; there is no standalone table-viewer Python implementation here. |
 | `GUI_NETWORK_CONTROL` | miniTRASGO station status monitor: checks hosts through SSH, the analysis process and DAQ-file recency. | Python/Tkinter GUI plus desktop launcher. |
 
-Each subdirectory is intentionally self-contained. Where a more detailed `README.md` exists inside a tool directory, it should be treated as the authoritative documentation for that GUI.
+Each subdirectory is intentionally self-contained and has its own `README.md`. Treat that subdirectory documentation as authoritative for tool-specific behavior.
 
 ## Remote-launcher model
 
@@ -56,7 +56,7 @@ Some launchers additionally use `zenity`, `kdialog` or `notify-send` when availa
 /home/mingo/DATAFLOW_v3/OPERATIONS/OPERATIONS_SCRIPTS/NOTIFICATIONS/STATUS_GUI/mingo_cron_logs_gui.py
 ```
 
-`GUI_MINGO_TABLE_VIEWER` currently defaults to:
+The legacy `GUI_MINGO_TABLE_VIEWER` launcher currently defaults to:
 
 ```text
 /home/mingo/DATAFLOW_v3/MASTER/ANCILLARY/PIPELINE_REAL_TIME_CHECK/step1_status_timeline_gui.py
@@ -119,9 +119,11 @@ Useful modes include:
 
 The intended deployment model is to copy the Python GUI to the MINGO host and start it through the local SSH/X11 launcher.
 
-### Table viewer
+### Table viewer compatibility launcher
 
-`GUI_MINGO_TABLE_VIEWER` currently contains launcher/desktop assets but not a standalone table-viewer Python implementation. Its default launcher target is the Step 1 status-timeline script shown above. This distinction is worth keeping in mind when reorganizing or renaming the repository later.
+`GUI_MINGO_TABLE_VIEWER` is retained for compatibility with the older `MASTER/ANCILLARY/PIPELINE_REAL_TIME_CHECK` remote path. Its current launcher does not provide an independent table-viewer implementation, and its historical `--simulation`/`--both` options resolve to the Step 1 target unless `SIMULATION_REMOTE_SCRIPT` is explicitly overridden.
+
+For current Step 1/simulation status launching, `GUI_MINGO_ANALYSIS_CONTROL` is the clearer entry point.
 
 ### Network control
 
