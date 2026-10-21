@@ -1,4 +1,4 @@
-# GUIs
+# MINGO GUI Tools
 
 Small graphical utilities and desktop launchers used around the MINGO / miniTRASGO workflow.
 
@@ -69,8 +69,8 @@ Most of these paths can be overridden through environment variables defined by t
 Clone the repository:
 
 ```bash
-git clone https://github.com/csoneira/GUIs.git
-cd GUIs
+git clone https://github.com/csoneira/mingo-gui-tools.git
+cd mingo-gui-tools
 ```
 
 Then enter the desired tool directory. Remote MINGO launchers generally support:
